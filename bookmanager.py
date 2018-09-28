@@ -28,7 +28,8 @@ def home():
         book = Book(title=request.form.get("title"))
         db.session.add(book)
         db.session.commit()
-    return render_template("home.html")
+    books = Book.query.all()
+    return render_template("home.html", books=books)
 
 
 if __name__ == "__main__":

@@ -1,9 +1,14 @@
 <html>
   <body>
+    <h1>Add book</h1>
     <form method="POST" action="/">
-      <input type="text" name="title">
-      <input type="submit" value="Add">
+        <input type="text" name="title">
+        <input type="submit" value="Add">
     </form>
+
+    <h1>Books</h1>
+    {% for book in books %}
+      <p>{{book.title}}</p>
+    {% endfor %}
   </body>
 </html>
-
