@@ -12,13 +12,20 @@ Please execute the following commands:
 ::
 
     sudo apt-get install sqlitebrowser
+    git clone https://github.com/macagua/flask-crud-app.git
     virtualenv --python=/usr/bin/python3 .
-    source Flask_1_0_2/bin/activate
+    source bin/activate
     pip3 install -r requirements.txt
-    pip freeze > requirements.txt
-    mkdir -p ~/python/flask-crud-app/templates
-    cd ~/python/flask-crud-app
-    python bookmanager.py
+
+Running
+========
+
+Please execute the following command:
+
+::
+
+
+    python3 bookmanager.py
 
 
 Initializing database
