@@ -2,7 +2,6 @@ import os
 
 from flask import Flask
 from flask import render_template
-from flask import redirect
 from flask import request
 
 from flask_sqlalchemy import SQLAlchemy
@@ -29,9 +28,9 @@ def home():
         book = Book(title=request.form.get("title"))
         db.session.add(book)
         db.session.commit()
-    books = Book.query.all()
-    return render_template("home.html", books=books)
+    return render_template("home.html")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
