@@ -17,3 +17,13 @@ Requeriments
   python bookmanager.py
 
 
+Initializing database
+=====================
+
+::
+  ipython3
+  >>> from bookmanager import db
+  >>> db.create_all()
+  >>> exit()
+
+
