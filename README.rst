@@ -19,19 +19,6 @@ Please execute the following commands:
     pip3 install -r requirements.txt
 
 
-Initializing database
-=====================
-
-From the IPython execute the following commands:
-
-::
-
-    ipython3
-    >>> from bookmanager import db
-    >>> db.create_all()
-    >>> exit()
-
-
 Running
 =======
 
