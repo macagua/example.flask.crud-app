@@ -14,6 +14,7 @@ Please execute the following commands:
 
     $ sudo apt-get install git python3-virtualenv python3-pip sqlitebrowser
     $ git clone https://github.com/macagua/flask-crud-app.git
+    $ cd ./flask-crud-app
     $ virtualenv --python=/usr/bin/python3 venv
     $ source ./venv/bin/activate
     $ pip3 install -r requirements.txt
