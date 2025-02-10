@@ -2,21 +2,27 @@
 flask-crud-app
 ==============
 
+.. image:: https://raw.githubusercontent.com/macagua/flask-crud-app/master/docs/_static/flask-vertical.png
+   :class: image-inline
+
 Building a CRUD application with Flask and SQLAlchemy
 
 
-Requeriments
+Requirements
 ============
 
 Please execute the following commands:
 
 ::
 
-    $ sudo apt-get install git python3-virtualenv python3-pip sqlitebrowser
+    $ sudo apt install git python3-virtualenv python3-pip
+    $ sudo apt install git
+    $ sudo apt install sqlite3
     $ git clone https://github.com/macagua/flask-crud-app.git
     $ cd ./flask-crud-app
     $ virtualenv --python=/usr/bin/python3 venv
     $ source ./venv/bin/activate
+    $ pip3 install --upgrade pip
     $ pip3 install -r requirements.txt
 
 
@@ -28,18 +34,18 @@ Please execute the following command:
 ::
 
     $ python3 bookmanager.py
-     * Serving Flask app "bookmanager" (lazy loading)
-     * Environment: production
-       WARNING: Do not use the development server in a production environment.
-       Use a production WSGI server instead.
+     * Serving Flask app 'bookmanager'
      * Debug mode: on
-     * Running on http://0.0.0.0:8087/ (Press CTRL+C to quit)
+    WARNING: This is a development server. Do not use it in a production deployment.
+    Use a production WSGI server instead.
+     * Running on all addresses (0.0.0.0)
+     * Running on http://127.0.0.1:8087
+     * Running on http://172.23.215.118:8087
+    Press CTRL+C to quit
      * Restarting with stat
      * Debugger is active!
-     * Debugger PIN: 245-060-649
-    127.0.0.1 - - [04/Jul/2019 14:21:17] "GET / HTTP/1.1" 200 -
-    127.0.0.1 - - [04/Jul/2019 14:21:18] "GET /favicon.ico HTTP/1.1" 404 -
-
+     * Debugger PIN: 641-934-958
+    127.0.0.1 - - [10/Feb/2025 14:10:06] "GET / HTTP/1.1" 200 -
 
 Open at your Web browser the following link http://127.0.0.1:8087
 
@@ -47,12 +53,18 @@ Open at your Web browser the following link http://127.0.0.1:8087
 .. image:: https://raw.githubusercontent.com/macagua/flask-crud-app/master/docs/_static/bookmanager.png
    :class: image-inline
 
-
 SQLAlchemy to SQL
 =================
 
+The following code is an example of how SQLAlchemy translates
+the Python code to SQL code.
 
-**db.session.commit()**::
+**db.session.commit()**
+
+Insert the following books into the database:
+
+::
+
 
     INSERT INTO book (title) VALUES ('The Hobbie');
     INSERT INTO book (title) VALUES ('The Lord of Rings');
@@ -60,23 +72,49 @@ SQLAlchemy to SQL
     INSERT INTO book (title) VALUES ('The Children of Húrin');
     COMMIT;
 
+---
+
+Update the title of the book 'The Lord of Rings' to 'The Lord of the Rings':
+
+::
+
+
     UPDATE book
     SET title='The Lord of the Rings'
     WHERE title = 'The Lord of Rings';
     COMMIT;
 
-**Book.query.all()**::
+---
+
+**Book.query.all()**
+
+Search for all books:
+
+::
+
 
     SELECT * FROM book;
 
-**Book.query.filter_by(title=oldtitle).first()**::
+---
+
+**Book.query.filter_by(title=old_title).first()**:
+
+Search for the book with the title 'The Hobbie':
+
+::
+
 
     SELECT book.title
     FROM book
     WHERE book.title = 'The Hobbie'
     LIMIT 1 OFFSET 0;
 
-**db.session.delete(book)**::
+**db.session.delete(book)**:
+
+Delete the book with the title 'The Children of Húrin':
+
+::
+
 
     DELETE FROM book
     WHERE book.title = 'The Children of Húrin';
@@ -85,9 +123,8 @@ SQLAlchemy to SQL
 Reference
 =========
 
-- https://www.codementor.io/garethdwyer/building-a-crud-application-with-flask-and-sqlalchemy-dm3wv7yu2
+- https://www.codementor.io/@garethdwyer/building-a-crud-application-with-flask-and-sqlalchemy-dm3wv7yu2
 
-- https://docs.sqlalchemy.org/en/latest/orm/tutorial.html
+- https://docs.sqlalchemy.org/en/20/tutorial/index.html#unified-tutorial
 
-- http://flask-sqlalchemy.pocoo.org/2.3/queries/
-
+- https://flask-sqlalchemy.palletsprojects.com/en/stable/queries/
