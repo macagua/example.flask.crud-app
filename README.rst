@@ -95,8 +95,6 @@ Search for all books:
 
     SELECT * FROM book;
 
-----
-
 **Book.query.filter_by(title=old_title).first()**:
 
 Search for the book with the title 'The Hobbie':
@@ -108,6 +106,8 @@ Search for the book with the title 'The Hobbie':
     FROM book
     WHERE book.title = 'The Hobbie'
     LIMIT 1 OFFSET 0;
+
+----
 
 **db.session.delete(book)**:
 
