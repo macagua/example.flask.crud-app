@@ -72,7 +72,7 @@ Insert the following books into the database:
     INSERT INTO book (title) VALUES ('The Children of Húrin');
     COMMIT;
 
----
+----
 
 Update the title of the book 'The Lord of Rings' to 'The Lord of the Rings':
 
@@ -84,7 +84,7 @@ Update the title of the book 'The Lord of Rings' to 'The Lord of the Rings':
     WHERE title = 'The Lord of Rings';
     COMMIT;
 
----
+----
 
 **Book.query.all()**
 
@@ -95,7 +95,7 @@ Search for all books:
 
     SELECT * FROM book;
 
----
+----
 
 **Book.query.filter_by(title=old_title).first()**:
 
