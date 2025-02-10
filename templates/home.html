@@ -1,26 +1,35 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <title>Books Manager</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/flask-icon.png') }}"/>
+  </head>
   <body>
-    <h1>Add book</h1>
+    <h1>Add new book</h1>
+    <!-- Add form -->
     <form method="POST" action="/">
       <input type="text" name="title">
       <input type="submit" value="Add">
     </form>
 
-    <h1>Books</h1>
+    <h1>Books list</h1>
     <table>
+      <!-- Books form -->
       {% for book in books %}
         <tr>
           <td>
             {{book.title}}
           </td>
           <td>
+            <!-- Update form -->
             <form method="POST" action="./update" style="display: inline">
-              <input type="hidden" value="{{book.title}}" name="oldtitle">
-              <input type="text" value="{{book.title}}" name="newtitle">
+              <input type="hidden" value="{{book.title}}" name="old_title">
+              <input type="text" value="{{book.title}}" name="new_title">
               <input type="submit" value="Update">
             </form>
           </td>
           <td>
+            <!-- Delete form -->
             <form method="POST" action="./delete" style="display: inline">
               <input type="hidden" value="{{book.title}}" name="title">
               <input type="submit" value="Delete">
