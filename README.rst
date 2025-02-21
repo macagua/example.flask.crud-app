@@ -15,14 +15,14 @@ Please execute the following commands:
 
 ::
 
-    $ sudo apt install git python3-virtualenv python3-pip
-    $ sudo apt install git
-    $ sudo apt install sqlite3
+    $ sudo apt install -y python3-dev python3-pip python3-virtualenv
+    $ sudo apt install -y git
+    $ sudo apt install -y sqlite3
     $ git clone https://github.com/macagua/flask-crud-app.git
     $ cd ./flask-crud-app
-    $ virtualenv --python=/usr/bin/python3 venv
+    $ virtualenv --python /usr/bin/python3 venv
     $ source ./venv/bin/activate
-    $ pip3 install --upgrade pip
+    $ pip3 install -U pip
     $ pip3 install -r requirements.txt
 
 
