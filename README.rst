@@ -1,8 +1,8 @@
-==============
-flask-crud-app
-==============
+======================
+example.flask.crud-app
+======================
 
-.. image:: https://raw.githubusercontent.com/macagua/flask-crud-app/master/docs/_static/flask-vertical.png
+.. image:: https://raw.githubusercontent.com/macagua/example.flask.crud-app/master/docs/_static/flask-vertical.png
    :class: image-inline
 
 Building a CRUD application with Flask and SQLAlchemy
@@ -18,13 +18,15 @@ Please execute the following commands:
     $ sudo apt install -y python3-dev python3-pip python3-virtualenv
     $ sudo apt install -y git
     $ sudo apt install -y sqlite3
-    $ git clone https://github.com/macagua/flask-crud-app.git
+    $ git clone https://github.com/macagua/example.flask.crud-app.git flask-crud-app
     $ cd ./flask-crud-app
     $ virtualenv --python /usr/bin/python3 venv
     $ source ./venv/bin/activate
     $ pip3 install -U pip
     $ pip3 install -r requirements.txt
 
+
+----
 
 Running
 =======
@@ -49,9 +51,13 @@ Please execute the following command:
 
 Open at your Web browser the following link http://127.0.0.1:8087
 
-
-.. image:: https://raw.githubusercontent.com/macagua/flask-crud-app/master/docs/_static/bookmanager.png
+.. image:: https://raw.githubusercontent.com/macagua/example.flask.crud-app/master/docs/_static/bookmanager.png
    :class: image-inline
+
+Display a **Book Manager** app, like the previous figure.
+
+
+----
 
 SQLAlchemy to SQL
 =================
@@ -120,11 +126,9 @@ Delete the book with the title 'The Children of Húrin':
     WHERE book.title = 'The Children of Húrin';
 
 
-Reference
-=========
+References
+==========
 
-- https://www.codementor.io/@garethdwyer/building-a-crud-application-with-flask-and-sqlalchemy-dm3wv7yu2
-
-- https://docs.sqlalchemy.org/en/20/tutorial/index.html#unified-tutorial
-
-- https://flask-sqlalchemy.palletsprojects.com/en/stable/queries/
+- `Building a CRUD application with Flask and SQLAlchemy <https://www.codementor.io/@garethdwyer/building-a-crud-application-with-flask-and-sqlalchemy-dm3wv7yu2>`_.
+- `SQLAlchemy Unified Tutorial <https://docs.sqlalchemy.org/en/20/tutorial/index.html#unified-tutorial>`_.
+- `Modifying and Querying Data — Flask-SQLAlchemy Documentation <https://flask-sqlalchemy.palletsprojects.com/en/stable/queries/>`_.
