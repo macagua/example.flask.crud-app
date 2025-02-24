@@ -100,4 +100,4 @@ with app.app_context():
     # Create tables
     db.create_all()
     # Run the app
-    app.run(host='0.0.0.0', port=8087, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
