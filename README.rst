@@ -36,20 +36,8 @@ Please execute the following command:
 ::
 
     $ python3 bookmanager.py
-     * Serving Flask app 'bookmanager'
-     * Debug mode: on
-    WARNING: This is a development server. Do not use it in a production deployment.
-    Use a production WSGI server instead.
-     * Running on all addresses (0.0.0.0)
-     * Running on http://127.0.0.1:5000
-     * Running on http://172.23.215.118:5000
-    Press CTRL+C to quit
-     * Restarting with stat
-     * Debugger is active!
-     * Debugger PIN: 641-934-958
-    127.0.0.1 - - [10/Feb/2025 14:10:06] "GET / HTTP/1.1" 200 -
 
-Open at your Web browser the following link http://127.0.0.1:5000
+Open at your Web browser the following link http://127.0.0.1:5000/
 
 .. image:: https://raw.githubusercontent.com/macagua/example.flask.crud-app/master/docs/_static/bookmanager.png
    :class: image-inline
