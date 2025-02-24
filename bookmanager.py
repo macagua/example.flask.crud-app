@@ -57,9 +57,9 @@ class Book(db.Model):
     def __repr__(self):
         return "<Title: {}>".format(self.title)
 
-# Home page route
 @app.route("/", methods=["GET", "POST"])
 def home():
+    """Home page route"""
     books = None
     if request.form:
         try:
@@ -73,9 +73,9 @@ def home():
     books = Book.query.all()
     return render_template("home.html", books=books)
 
-# Update book title route
 @app.route("/update", methods=["POST"])
 def update():
+    """Update book title route"""
     try:
         new_title = request.form.get("new_title")
         old_title = request.form.get("old_title")
@@ -87,9 +87,9 @@ def update():
         print(e)
     return redirect("/")
 
-# Delete book route
 @app.route("/delete", methods=["POST"])
 def delete():
+    """Delete book route"""
     title = request.form.get("title")
     book = Book.query.filter_by(title=title).first()
     db.session.delete(book)
